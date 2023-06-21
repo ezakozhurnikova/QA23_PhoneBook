@@ -1,6 +1,5 @@
 package com.phonebook.tests;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -11,31 +10,33 @@ public class CreateAccountTests extends TestBase {
     @BeforeMethod
 
     public void ensurePrecondition(){
-        if (!isElementPresent(By.xpath("//a[.='LOGIN']"))){
-            click(By.xpath("//button[.='Sign Out']"));
+        if (!app.isLoginLinkPresent()){
+            app.clickOnSignOutButton();
         }
 
         // click on login link
-        //driver.findElement(By.xpath("//a[.='LOGIN']")).click();
-        click(By.xpath("//a[.='LOGIN']"));
+        //
+        app.clickOnLoginLink();
 
     }
-  @Test
+
+
+    @Test
   public void existedUserRegistrationNegativeTest(){
       // enter email field
       // [placeholder='Email']
-        type(By.cssSelector("[placeholder='Email']"), "akr@gmail.com");
+        //enter password field
+        // [placeholder='Password']
+        app.fillLoginRegistrationForm(new User().setEmail("akr@gmail.com").setPassword("Ka12345$") );
 
 
-      //enter password field
-     // [placeholder='Password']
-      type(By.cssSelector("[placeholder='Password']"), "Ka12345$");
+      
       //click on Registration
       //by.name-registration
 
-      click(By.name("registration"));
-      // assert user logged in(check "Sign out" button displayed)
-      Assert.assertTrue(isAlertPresent());
+        app.clickOnRegistrationButton();
+        // assert user logged in(check "Sign out" button displayed)
+      Assert.assertTrue(app.isAlertPresent());
 
 
   }
