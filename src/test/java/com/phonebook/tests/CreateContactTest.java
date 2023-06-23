@@ -10,38 +10,44 @@ public class CreateContactTest extends TestBase {
     @BeforeMethod
 
     public void ensurePrecondition() {
-        if (!app.isLoginLinkPresent()) {
-            app.clickOnSignOutButton();
+        if (!app.getHeader().isLoginLinkPresent()) {
+            app.getHeader().clickOnSignOutButton();
         }
 
         // click on login link
         //driver.findElement(By.xpath("//a[.='LOGIN']")).click();
-        app.click(By.xpath("//a[.='LOGIN']"));
+        app.getHeader().click(By.xpath("//a[.='LOGIN']"));
 
 
-        app.fillLoginRegistrationForm(new User().setEmail("akr@gmail.com").setPassword("Ka12345$") );
+        app.getUser().fillLoginRegistrationForm(new User().setEmail("akr@gmail.com").setPassword("Ka12345$") );
         //click on Registration
         //by.name-registration
 
-        app.clickOnLoginButton();
+        app.getUser().clickOnLoginButton();
     }
   @Test
     public void addContactPositiveTest(){
         //click on the ADD link
-        app.clickOnAddLink();
+        app.getHeader().clickOnAddLink();
       //  int i= (int) (System.currentTimeMillis()/1000)%3600; unikalnyj nomer
         //fill in the add contact form
-      app.fillAddContactForm("Karl", "Smith", "1234567890", "smith@gm.com", "Berlin", "manager");
+      app.getContact().fillAddContactForm(new Contact()
+              .setName("Sting")
+              .setLastname("Sting")
+              .setPhone("1234567890")
+              .setEmail("sting@gm.com")
+              .setAddress("London")
+              .setDesc("singer"));
       //click on the Save button
-      app.clickOnSaveButton();
+      app.getContact().clickOnSaveButton();
       //assert the contact is added
-      Assert.assertTrue(app.isContactCreated("Karl"));
+      Assert.assertTrue(app.getContact().isContactCreated("Sting"));
 
 
   }
   @AfterMethod
     public void deleteContact(){
-      app.deleteContact();
+      app.getContact().deleteContact();
   }
 
 

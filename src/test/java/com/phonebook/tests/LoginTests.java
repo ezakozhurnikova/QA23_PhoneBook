@@ -9,39 +9,39 @@ public class LoginTests extends TestBase{
     @BeforeMethod
 
     public void ensurePrecondition(){
-        if (!app.isLoginLinkPresent()){
-            app.clickOnSignOutButton();
+        if (!app.getHeader().isLoginLinkPresent()){
+            app.getHeader().clickOnSignOutButton();
         }
 
         // click on login link
         //driver.findElement(By.xpath("//a[.='LOGIN']")).click();
-        app.click(By.xpath("//a[.='LOGIN']"));
+        app.getHeader().click(By.xpath("//a[.='LOGIN']"));
 
     }
-    @Test
+    @Test(priority = 1)
     public void loginPositiveTest() {
         // enter email field
         // [placeholder='Email']
-        app.fillLoginRegistrationForm(new User()
+        app.getUser().fillLoginRegistrationForm(new User()
                 .setEmail("akr@gmail.com")
                 .setPassword("Ka12345$"));
         //click on Registration
         //by.name-registration
 
-        app.clickOnLoginButton();
+        app.getUser().clickOnLoginButton();
         // assert user logged in(check "Sign out" button displayed)
-        Assert.assertTrue(app.isSignOutButtonPresent());
+        Assert.assertTrue(app.getHeader().isSignOutButtonPresent());
     }
-        @Test
+        @Test(priority = 2)
     public void loginNegativeWithoutPasswordTest(){
         // enter email field
         // [placeholder='Email']
-        app.fillLoginRegistrationForm(new User().setEmail("akr@gmail.com") );
+        app.getUser().fillLoginRegistrationForm(new User().setEmail("akr@gmail.com") );
         //click on Registration
         //by.name-registration
 
-        app.clickOnLoginButton();
-        Assert.assertTrue(app.isAlertPresent());
+        app.getUser().clickOnLoginButton();
+        Assert.assertTrue(app.getHeader().isAlertPresent());
 
 
     }

@@ -10,13 +10,13 @@ public class CreateAccountTests extends TestBase {
     @BeforeMethod
 
     public void ensurePrecondition(){
-        if (!app.isLoginLinkPresent()){
-            app.clickOnSignOutButton();
+        if (!app.getHeader().isLoginLinkPresent()){
+            app.getHeader().clickOnSignOutButton();
         }
 
         // click on login link
         //
-        app.clickOnLoginLink();
+        app.getHeader().clickOnLoginLink();
 
     }
 
@@ -27,16 +27,16 @@ public class CreateAccountTests extends TestBase {
       // [placeholder='Email']
         //enter password field
         // [placeholder='Password']
-        app.fillLoginRegistrationForm(new User().setEmail("akr@gmail.com").setPassword("Ka12345$") );
+        app.getUser().fillLoginRegistrationForm(new User().setEmail("akr@gmail.com").setPassword("Ka12345$") );
 
 
       
       //click on Registration
       //by.name-registration
 
-        app.clickOnRegistrationButton();
+        app.getUser().clickOnRegistrationButton();
         // assert user logged in(check "Sign out" button displayed)
-      Assert.assertTrue(app.isAlertPresent());
+      Assert.assertTrue(app.getUser().isAlertPresent());
 
 
   }

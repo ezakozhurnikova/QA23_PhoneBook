@@ -9,24 +9,24 @@ public class HeaderTest extends TestBase {
 
     public void phoneBookElementTest() {
         //isElementPresent1(By.xpath("//h1[text()='PHONEBOOK']"));
-        Assert.assertTrue(app.isLogoPresent());
+        Assert.assertTrue(app.getHeader().isLogoPresent());
     }
 
     @Test
     public void homeElementTest() {
         // isElementPresent1(By.xpath("//a[@href='/home']"));
-        Assert.assertTrue(app.isHomeLinkPresent());
+        Assert.assertTrue(app.getHeader().isHomeLinkPresent());
     }
 
     @Test
     public void aboutElementTest() {
         //isElementPresent1(By.xpath("//a[@href='/about']"));
-        Assert.assertTrue(app.isAboutLinkPresent());
+        Assert.assertTrue(app.getHeader().isAboutLinkPresent());
     }
 
     @Test
     public void loginElementTest() {
         // isElementPresent1(By.xpath("//a[@href='/login']"));
-        Assert.assertTrue(app.isLoginLinkPresent());
+        Assert.assertTrue(app.getHeader().isLoginLinkPresent());
     }
 }
