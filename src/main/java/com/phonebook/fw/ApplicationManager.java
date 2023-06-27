@@ -1,17 +1,18 @@
-package com.phonebook.tests;
+package com.phonebook.fw;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.time.Duration;
 
 public class ApplicationManager{
 
   String browser;
-    WebDriver driver;
+    public WebDriver driver;
 
     UserHelper user;
     ContactHelper contact;
@@ -39,11 +40,16 @@ public class ApplicationManager{
     }
 
     public void init() {
+        System.err.close(); //убирает системные warnings
 
         if (browser.equalsIgnoreCase("chrome")){
             driver = new ChromeDriver();
-       /* } else if (browser.equalsIgnoreCase("firefox")) {
-           driver=new FirefoxDriver();*/
+        } else if (browser.equalsIgnoreCase("firefox")) {
+         //  driver=new FirefoxDriver();
+            FirefoxOptions options = new FirefoxOptions();
+            options.addArguments("remote-allow-origins=*");
+            driver = new FirefoxDriver(options);
+
         }else if (browser.equalsIgnoreCase("edge")) {
             EdgeOptions options = new EdgeOptions();
             options.addArguments("remote-allow-origins=*");

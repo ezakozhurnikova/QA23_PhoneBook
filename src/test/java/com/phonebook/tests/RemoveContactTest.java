@@ -1,5 +1,7 @@
 package com.phonebook.tests;
 
+import com.phonebook.model.Contact;
+import com.phonebook.model.User;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -14,7 +16,7 @@ public class RemoveContactTest extends TestBase {
             app.getHeader().clickOnSignOutButton();
         }
         app.getHeader().click(By.xpath("//a[.='LOGIN']"));
-        app.getUser().fillLoginRegistrationForm(new User().setEmail("akr@gmail.com").setPassword("Ka12345$") );
+        app.getUser().fillLoginRegistrationForm(new User().setEmail("akr@gmail.com").setPassword("Ka12345$"));
         app.getUser().clickOnLoginButton();
         app.getHeader().clickOnAddLink();
         app.getContact().fillAddContactForm(new Contact()
@@ -27,11 +29,22 @@ public class RemoveContactTest extends TestBase {
         app.getContact().clickOnSaveButton();
 
     }
+
     @Test
 
-    public void removeContactTest(){
+    public void removeContactTest() {
+
+        int sizeBefore = app.getContact().sizeOfContacts();
+        // System.out.println(sizeBefore);
+
         app.getContact().removeContact();
-       Assert.assertTrue(app.getContact().isContactRemoved("No Contacts here!"));
+
+        app.getContact().pause(1000);
+
+        int sizeAfter = app.getContact().sizeOfContacts();
+        // System.out.println(sizeAfter);
+        Assert.assertEquals(sizeAfter, sizeBefore - 1);
+        // Assert.assertTrue(app.getContact().isContactRemoved("No Contacts here!"));
 
     }
 }

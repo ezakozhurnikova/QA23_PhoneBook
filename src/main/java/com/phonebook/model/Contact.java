@@ -1,4 +1,4 @@
-package com.phonebook.tests;
+package com.phonebook.model;
 
 public class Contact {
  private String name;
@@ -62,4 +62,11 @@ public class Contact {
         return desc;
     }
 
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
 }
