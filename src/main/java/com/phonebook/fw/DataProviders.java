@@ -29,4 +29,20 @@ public class DataProviders {
         return list.iterator();
 
     }
+    @DataProvider
+    public Iterator<Object[]> addContactWithWrongPhoneFromCSVFile() throws IOException {
+        List<Object[]> list = new ArrayList<>();
+
+        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/wrongPhoneN.csv")));
+        String line = reader.readLine();
+
+        while (line != null) {
+            String[] split = line.split(",");
+            list.add(new Object[]{new Contact().setName(split[0]).setLastname(split[1])
+                    .setPhone(split[2]).setEmail(split[3]).setAddress(split[4]).setDesc(split[5])});
+            line = reader.readLine();
+        }
+        return list.iterator();
+
+    }
 }

@@ -22,51 +22,62 @@ public class CreateContactTest extends TestBase {
         app.getHeader().click(By.xpath("//a[.='LOGIN']"));
 
 
-        app.getUser().fillLoginRegistrationForm(new User().setEmail("akr@gmail.com").setPassword("Ka12345$") );
+        app.getUser().fillLoginRegistrationForm(new User().setEmail("akr@gmail.com").setPassword("Ka12345$"));
         //click on Registration
         //by.name-registration
 
         app.getUser().clickOnLoginButton();
     }
-  @Test
-    public void addContactPositiveTest(){
+
+    @Test
+    public void addContactPositiveTest() {
         //click on the ADD link
         app.getHeader().clickOnAddLink();
-      //  int i= (int) (System.currentTimeMillis()/1000)%3600; unikalnyj nomer
+        //  int i= (int) (System.currentTimeMillis()/1000)%3600; unikalnyj nomer
         //fill in the add contact form
-      app.getContact().fillAddContactForm(new Contact()
-              .setName("Sting")
-              .setLastname("Sting")
-              .setPhone("1234567890")
-              .setEmail("sting@gm.com")
-              .setAddress("London")
-              .setDesc("singer"));
-      //click on the Save button
-      app.getContact().clickOnSaveButton();
-      //assert the contact is added
-      Assert.assertTrue(app.getContact().isContactCreated("Sting"));
+        app.getContact().fillAddContactForm(new Contact()
+                .setName("Sting")
+                .setLastname("Sting")
+                .setPhone("1234567890")
+                .setEmail("sting@gm.com")
+                .setAddress("London")
+                .setDesc("singer"));
+        //click on the Save button
+        app.getContact().clickOnSaveButton();
+        //assert the contact is added
+        Assert.assertTrue(app.getContact().isContactCreated("Sting"));
 
 
-  }
-  @Test(dataProviderClass = DataProviders.class,dataProvider = "addContactFromCSVFile")
-    public void addContactFromCsvFilePositiveTest(Contact contact){
+    }
+
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "addContactFromCSVFile")
+    public void addContactFromCsvFilePositiveTest(Contact contact) {
         //click on the ADD link
         app.getHeader().clickOnAddLink();
-      //  int i= (int) (System.currentTimeMillis()/1000)%3600; unikalnyj nomer
+        //  int i= (int) (System.currentTimeMillis()/1000)%3600; unikalnyj nomer
         //fill in the add contact form
-      app.getContact().fillAddContactForm(contact);
-      //click on the Save button
-      app.getContact().clickOnSaveButton();
-      //assert the contact is added
+        app.getContact().fillAddContactForm(contact);
+        //click on the Save button
+        app.getContact().clickOnSaveButton();
+        //assert the contact is added
 
+    }
 
+    @Test(dataProviderClass = DataProviders.class, dataProvider = "addContactWithWrongPhoneFromCSVFile")
+    public void addContactWithWrongPhoneFromCSVFileNegativeTest(Contact contact) {
+        app.getHeader().clickOnAddLink();
 
-  }
-  @AfterMethod
-    public void deleteContact(){
-      app.getContact().deleteContact();
-  }
+        app.getContact().fillAddContactForm(contact);
 
+        app.getContact().clickOnSaveButton();
+        Assert.assertTrue(app.getUser().isAlertPresent());
+
+    }
+
+    @AfterMethod
+    public void deleteContact() {
+        app.getContact().deleteContact();
+    }
 
 
 }
