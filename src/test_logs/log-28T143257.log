@@ -1,0 +1,24 @@
+1230 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  C:\Users\AIT TR Student\AppData\Local\JetBrains\IdeaIC2022.2\temp-testng-customsuite.xml
+
+5133 [main] INFO  com.phonebook.tests.TestBase -- Start test addContactFromCsvFilePositiveTest with data: [Contact{name='Karl', phone='1234567890'}]
+8723 [main] INFO  com.phonebook.tests.TestBase -- PASSED addContactFromCsvFilePositiveTest
+8723 [main] INFO  com.phonebook.tests.TestBase -- Stop test
+8723 [main] INFO  com.phonebook.tests.TestBase -- ===================================================
+8727 [main] INFO  com.phonebook.tests.TestBase -- Start test addContactFromCsvFilePositiveTest with data: [Contact{name='Karl', phone='12345678990'}]
+22375 [main] INFO  com.phonebook.tests.TestBase -- PASSED addContactFromCsvFilePositiveTest
+22375 [main] INFO  com.phonebook.tests.TestBase -- Stop test
+22375 [main] INFO  com.phonebook.tests.TestBase -- ===================================================
+22377 [main] INFO  com.phonebook.tests.TestBase -- Start test addContactFromCsvFilePositiveTest with data: [Contact{name='Karl', phone='12345678899'}]
+35011 [main] INFO  com.phonebook.tests.TestBase -- PASSED addContactFromCsvFilePositiveTest
+35011 [main] INFO  com.phonebook.tests.TestBase -- Stop test
+35011 [main] INFO  com.phonebook.tests.TestBase -- ===================================================
+35013 [main] INFO  com.phonebook.tests.TestBase -- Start test addContactFromCsvFilePositiveTest with data: [Contact{name='Karl', phone='123456778899'}]
+47561 [main] INFO  com.phonebook.tests.TestBase -- PASSED addContactFromCsvFilePositiveTest
+47561 [main] INFO  com.phonebook.tests.TestBase -- Stop test
+47561 [main] INFO  com.phonebook.tests.TestBase -- ===================================================
+47565 [main] INFO  com.phonebook.tests.TestBase -- Start test addContactPositiveTest with data: []
+60147 [main] INFO  com.phonebook.tests.TestBase -- PASSED addContactPositiveTest
+60148 [main] INFO  com.phonebook.tests.TestBase -- Stop test
+60148 [main] INFO  com.phonebook.tests.TestBase -- ===================================================
+60151 [main] INFO  com.phonebook.tests.TestBase -- Start test addContactWithWrongPhoneFromCSVFileNegativeTest with data: [Contact{name='Karl', phone='123456789'}]

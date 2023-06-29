@@ -1,0 +1,4 @@
+1465 [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  C:\Users\AIT TR Student\AppData\Local\JetBrains\IdeaIC2022.2\temp-testng-customsuite.xml
+
+5838 [main] INFO  com.phonebook.tests.TestBase -- Start test addContactWithWrongPhoneFromCSVFilePositiveTest with data: [Contact{name='Karl', phone='123456789'}]

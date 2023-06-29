@@ -60,6 +60,7 @@ public class CreateContactTest extends TestBase {
         //click on the Save button
         app.getContact().clickOnSaveButton();
         //assert the contact is added
+        app.getContact().deleteContact();
 
     }
 
@@ -74,10 +75,10 @@ public class CreateContactTest extends TestBase {
 
     }
 
-    @AfterMethod
+    /*@AfterMethod
     public void deleteContact() {
         app.getContact().deleteContact();
-    }
+    }*/
 
 
 }

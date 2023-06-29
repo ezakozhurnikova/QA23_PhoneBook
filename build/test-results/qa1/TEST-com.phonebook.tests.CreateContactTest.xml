@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.phonebook.tests.CreateContactTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2023-06-29T08:36:15" hostname="DESKTOP-OS617JJ" time="105.971">
+  <properties/>
+  <testcase name="addContactFromCsvFilePositiveTest[0](Contact{name='Karl', phone='1234567890'})" classname="com.phonebook.tests.CreateContactTest" time="2.472"/>
+  <testcase name="addContactFromCsvFilePositiveTest[1](Contact{name='Karl', phone='12345678990'})" classname="com.phonebook.tests.CreateContactTest" time="2.094"/>
+  <testcase name="addContactFromCsvFilePositiveTest[2](Contact{name='Karl', phone='12345678899'})" classname="com.phonebook.tests.CreateContactTest" time="2.775"/>
+  <testcase name="addContactFromCsvFilePositiveTest[3](Contact{name='Karl', phone='123456778899'})" classname="com.phonebook.tests.CreateContactTest" time="2.055"/>
+  <testcase name="addContactPositiveTest" classname="com.phonebook.tests.CreateContactTest" time="1.836"/>
+  <testcase name="addContactWithWrongPhoneFromCSVFileNegativeTest[0](Contact{name='Karl', phone='123456789'})" classname="com.phonebook.tests.CreateContactTest" time="2.007"/>
+  <testcase name="addContactWithWrongPhoneFromCSVFileNegativeTest[1](Contact{name='Karl', phone='1234567899+'})" classname="com.phonebook.tests.CreateContactTest" time="2.541"/>
+  <testcase name="addContactWithWrongPhoneFromCSVFileNegativeTest[2](Contact{name='Karl', phone='1234567889912345'})" classname="com.phonebook.tests.CreateContactTest" time="2.058"/>
+  <testcase name="addContactWithWrongPhoneFromCSVFileNegativeTest[3](Contact{name='Karl', phone='123456778'})" classname="com.phonebook.tests.CreateContactTest" time="2.36"/>
+  <system-out><![CDATA[10:36:04.498 [Test worker] INFO  com.phonebook.tests.TestBase -- Start test addContactFromCsvFilePositiveTest with data: [Contact{name='Karl', phone='1234567890'}]
+10:36:17.695 [Test worker] INFO  com.phonebook.tests.TestBase -- PASSED addContactFromCsvFilePositiveTest
+10:36:17.695 [Test worker] INFO  com.phonebook.tests.TestBase -- Stop test
+10:36:17.696 [Test worker] INFO  com.phonebook.tests.TestBase -- ===================================================
+10:36:17.702 [Test worker] INFO  com.phonebook.tests.TestBase -- Start test addContactFromCsvFilePositiveTest with data: [Contact{name='Karl', phone='12345678990'}]
+10:36:30.591 [Test worker] INFO  com.phonebook.tests.TestBase -- PASSED addContactFromCsvFilePositiveTest
+10:36:30.591 [Test worker] INFO  com.phonebook.tests.TestBase -- Stop test
+10:36:30.591 [Test worker] INFO  com.phonebook.tests.TestBase -- ===================================================
+10:36:30.594 [Test worker] INFO  com.phonebook.tests.TestBase -- Start test addContactFromCsvFilePositiveTest with data: [Contact{name='Karl', phone='12345678899'}]
+10:36:44.111 [Test worker] INFO  com.phonebook.tests.TestBase -- PASSED addContactFromCsvFilePositiveTest
+10:36:44.117 [Test worker] INFO  com.phonebook.tests.TestBase -- Stop test
+10:36:44.118 [Test worker] INFO  com.phonebook.tests.TestBase -- ===================================================
+10:36:44.121 [Test worker] INFO  com.phonebook.tests.TestBase -- Start test addContactFromCsvFilePositiveTest with data: [Contact{name='Karl', phone='123456778899'}]
+10:36:56.839 [Test worker] INFO  com.phonebook.tests.TestBase -- PASSED addContactFromCsvFilePositiveTest
+10:36:56.839 [Test worker] INFO  com.phonebook.tests.TestBase -- Stop test
+10:36:56.840 [Test worker] INFO  com.phonebook.tests.TestBase -- ===================================================
+10:36:56.842 [Test worker] INFO  com.phonebook.tests.TestBase -- Start test addContactPositiveTest with data: []
+10:37:09.315 [Test worker] INFO  com.phonebook.tests.TestBase -- PASSED addContactPositiveTest
+10:37:09.316 [Test worker] INFO  com.phonebook.tests.TestBase -- Stop test
+10:37:09.316 [Test worker] INFO  com.phonebook.tests.TestBase -- ===================================================
+10:37:09.319 [Test worker] INFO  com.phonebook.tests.TestBase -- Start test addContactWithWrongPhoneFromCSVFileNegativeTest with data: [Contact{name='Karl', phone='123456789'}]
+10:37:21.971 [Test worker] INFO  com.phonebook.tests.TestBase -- PASSED addContactWithWrongPhoneFromCSVFileNegativeTest
+10:37:21.974 [Test worker] INFO  com.phonebook.tests.TestBase -- Stop test
+10:37:21.976 [Test worker] INFO  com.phonebook.tests.TestBase -- ===================================================
+10:37:21.980 [Test worker] INFO  com.phonebook.tests.TestBase -- Start test addContactWithWrongPhoneFromCSVFileNegativeTest with data: [Contact{name='Karl', phone='1234567899+'}]
+10:37:35.276 [Test worker] INFO  com.phonebook.tests.TestBase -- PASSED addContactWithWrongPhoneFromCSVFileNegativeTest
+10:37:35.276 [Test worker] INFO  com.phonebook.tests.TestBase -- Stop test
+10:37:35.277 [Test worker] INFO  com.phonebook.tests.TestBase -- ===================================================
+10:37:35.278 [Test worker] INFO  com.phonebook.tests.TestBase -- Start test addContactWithWrongPhoneFromCSVFileNegativeTest with data: [Contact{name='Karl', phone='1234567889912345'}]
+10:37:47.925 [Test worker] INFO  com.phonebook.tests.TestBase -- PASSED addContactWithWrongPhoneFromCSVFileNegativeTest
+10:37:47.926 [Test worker] INFO  com.phonebook.tests.TestBase -- Stop test
+10:37:47.927 [Test worker] INFO  com.phonebook.tests.TestBase -- ===================================================
+10:37:47.931 [Test worker] INFO  com.phonebook.tests.TestBase -- Start test addContactWithWrongPhoneFromCSVFileNegativeTest with data: [Contact{name='Karl', phone='123456778'}]
+10:38:01.194 [Test worker] INFO  com.phonebook.tests.TestBase -- PASSED addContactWithWrongPhoneFromCSVFileNegativeTest
+10:38:01.195 [Test worker] INFO  com.phonebook.tests.TestBase -- Stop test
+10:38:01.196 [Test worker] INFO  com.phonebook.tests.TestBase -- ===================================================
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
